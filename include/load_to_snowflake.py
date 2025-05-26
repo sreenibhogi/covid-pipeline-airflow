@@ -14,7 +14,6 @@ def load_data_to_snowflake(ti):
         # 1. Create stage with SAS token
         f"""
         CREATE STAGE IF NOT EXISTS HR.azure_blob_stage_covid
-        --URL='azure://sasnwflk.blob.core.windows.net/coviddata'
         URL ='{COVID_BLOB_URL}'  
         CREDENTIALS=(AZURE_SAS_TOKEN='{AZURE_SAS_TOKEN}');
         """,
