@@ -1,8 +1,8 @@
 from airflow import DAG
 from airflow.providers.standard.operators.python import PythonOperator
 from datetime import datetime
-from include.extract_covid_data_to_blob import  get_covid_data_and_upload_to_blob  # adjust import
-from include.load_to_snowflake import load_data_to_snowflake
+from covid_data_pipeline.include.extract_covid_data_to_blob import  get_covid_data_and_upload_to_blob  # adjust import
+from covid_data_pipeline.include.load_to_snowflake import load_data_to_snowflake
 
 with DAG(
     dag_id='covid_data_to_blob_dag',
